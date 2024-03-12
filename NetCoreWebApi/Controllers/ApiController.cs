@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace NetCoreWebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class ApiController : ControllerBase
     {
         private readonly ILogger<ApiController> _logger;
@@ -15,11 +14,23 @@ namespace NetCoreWebApi.Controllers
         }
 
         [HttpGet]
+        [Route("api")]
         [Authorize]
         public ActionResult Get()
         {
             var test = 123;
             return new JsonResult(new { statut = "NetCoreWebApi - ok" });
         }
+
+
+        [HttpGet]
+        [Route("api/test")]
+        [AllowAnonymous]
+        public ActionResult GetTest()
+        {
+            var test = 123;
+            return new JsonResult(new { statut = "NetCoreWebApi - ok" });
+        }
+
     }
 }
