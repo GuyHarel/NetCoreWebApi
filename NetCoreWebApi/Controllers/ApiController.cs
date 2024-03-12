@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace NetCoreWebApi.Controllers
@@ -14,6 +15,7 @@ namespace NetCoreWebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Get()
         {
             var test = 123;
