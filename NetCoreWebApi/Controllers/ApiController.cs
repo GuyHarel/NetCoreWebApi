@@ -16,7 +16,7 @@ namespace NetCoreWebApi.Controllers
         [HttpGet]
         public ActionResult Get()
         {
-            return new JsonResult(new { statut = "ok" });
+            return new JsonResult(new { statut = "NetCoreWebApi - ok" });
         }
     }
 }
